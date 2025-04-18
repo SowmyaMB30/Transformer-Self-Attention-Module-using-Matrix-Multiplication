@@ -1,3 +1,18 @@
+// ============================================================================
+// Filename       : dut.sv
+// Author         : Sowmya Macheri Balaji
+// Date Created   : November 2024
+// Description    : 
+//   This module implements a fully synchronous FSM-based design for performing 
+//   matrix multiplications and attention mechanism operations (Q × Kᵀ → S and 
+//   S × V → Z) as typically used in transformer models. The design interfaces 
+//   with external SRAM blocks for reading input, weight, and scratchpad data, 
+//   and writing results. It handles input parsing, memory addressing, and 
+//   accumulation logic for dot-product based matrix operations. Local registers 
+//   are used to buffer intermediate Q, K, V, S, and Z matrices to support the 
+//   multi-phase computation.
+// Language : Verilog
+// ============================================================================
 module MyDesign (
     input wire clk,
     input wire reset_n,
